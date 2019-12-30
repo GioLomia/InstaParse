@@ -10,6 +10,6 @@ public class ParseApplication extends Application {
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("giorgi-instaparse") // should correspond to APP_ID env variable
                 .clientKey("CodepathInstaparseMoveFast")  // set explicitly unless clientKey is explicitly configured on Parse server
-                .server("http://giorgi-instaparse.herokuapp.com/parse").build());
+                .server("https://giorgi-instaparse.herokuapp.com/parse").build());
     }
 }
