@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -62,7 +63,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ParseFile image = post.getImage();
             if (image!=null) {
                 Log.d(TAG,image.getUrl());
-                Glide.with(context).load(image.getUrl()).into(ivImage);
+                Picasso.get().load(image.getUrl()).into(ivImage);
+                Log.d(TAG,image.getUrl());
             }
             tvDescription.setText(post.getDescription());
         }

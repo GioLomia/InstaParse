@@ -25,8 +25,8 @@ import java.util.List;
 public class PostsFragment extends Fragment {
     private final String TAG = "PostFragment";
     private RecyclerView rvPosts;
-    private PostsAdapter adapter;
-    private List<Post> nPosts;
+    protected PostsAdapter adapter;
+    protected List<Post> nPosts;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,9 +42,11 @@ public class PostsFragment extends Fragment {
         rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
         queryPosts();
     }
-    private void queryPosts() {
+    protected void queryPosts() {
         ParseQuery<Post> postQuery = new ParseQuery<Post>(Post.class);
         postQuery.include(Post.KEY_USER);
+        postQuery.setLimit(20);
+        postQuery.addDescendingOrder(Post.KEY_CREATED_AT);
         postQuery.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {

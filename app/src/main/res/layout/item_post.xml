@@ -16,10 +16,11 @@
 
     <ImageView
         android:id="@+id/ivImage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        android:layout_width="390dp"
+        android:layout_height="216dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvDescription"
